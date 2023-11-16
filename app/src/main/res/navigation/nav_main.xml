@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.itsao.app.test.ui.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/homeFragmentToListaFragment"
+            app:destination="@+id/listaFragment"/>
+
+        <action
+            android:id="@+id/homeFragmentToMapaFragment"
+            app:destination="@+id/mapaFragment"/>
+
+        <action
+            android:id="@+id/homeFragmentToConfirmationFragment"
+            app:destination="@+id/confirmationFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/listaFragment"
+        android:name="com.itsao.app.test.ui.ListaFragment"
+        tools:layout="@layout/fragment_lista"
+        android:label="ListaFragment" >
+        <action
+            android:id="@+id/listaFragmentToConfirmationFragment"
+            app:destination="@+id/confirmationFragment"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/mapaFragment"
+        tools:layout="@layout/fragment_mapa"
+        android:name="com.itsao.app.test.ui.MapaFragment"
+        android:label="MapaFragment" />
+    <fragment
+        android:id="@+id/confirmationFragment"
+        tools:layout="@layout/fragment_confirmation"
+        android:name="com.itsao.app.test.ui.ConfirmationFragment"
+        android:label="ConfirmationFragment" />
+</navigation>
