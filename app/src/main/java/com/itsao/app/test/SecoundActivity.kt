@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.itsao.app.test.databinding.ActivitySecoundBinding
+import com.itsao.app.test.utils.launchActivity
 
 class SecoundActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySecoundBinding
@@ -14,8 +15,7 @@ class SecoundActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.clickMe.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
+            launchActivity<MainActivity>()
         }
     }
 }
