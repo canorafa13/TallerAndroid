@@ -3,4 +3,9 @@
     <string name="str_hello_world">Hello World!!</string>
     <string name="title_activity_main">Activity Main</string>
     <string name="btn_click_me">Click me!!</string>
+
+    <string name="btn_lista">Ir a la lista</string>
+    <string name="btn_mapa">Ir al mapa</string>
+
+    <string name="str_success">Proceso completado con éxito</string>
 </resources>
