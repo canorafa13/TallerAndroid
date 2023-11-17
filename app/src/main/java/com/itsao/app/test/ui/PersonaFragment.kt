@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.itsao.app.test.R
 import com.itsao.app.test.databinding.FragmentPersonaBinding
 import com.itsao.app.test.db.Persona
@@ -45,6 +46,18 @@ class PersonaFragment: BaseFragment<FragmentPersonaBinding>() {
             } catch (e: Exception){
                 e.printStackTrace()
                 toast(R.string.message_error_form)
+            }
+        }
+
+
+
+        getViewModel().personaObserver.observe(viewLifecycleOwner){ result ->
+            if (result) {
+                //TODO OK
+                findNavController().navigate(PersonaFragmentDirections.personaFragmentToConfirmationFragment())
+            } else {
+                // TODO FAILED
+                toast(R.string.message_error_bd_persona)
             }
         }
 

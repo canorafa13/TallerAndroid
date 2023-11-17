@@ -42,5 +42,9 @@
         android:id="@+id/confirmationFragment"
         tools:layout="@layout/fragment_confirmation"
         android:name="com.itsao.app.test.ui.ConfirmationFragment"
-        android:label="ConfirmationFragment" />
+        android:label="ConfirmationFragment" >
+        <action
+            android:id="@+id/confirmationFragmentToHomeFragment"
+            app:destination="@+id/homeFragment"/>
+    </fragment>
 </navigation>

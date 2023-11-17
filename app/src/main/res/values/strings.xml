@@ -19,4 +19,6 @@
 
 
     <string name="message_error_form">Favor de revisar todos los campos</string>
+
+    <string name="message_error_bd_persona">Error al crear la persona</string>
 </resources>
