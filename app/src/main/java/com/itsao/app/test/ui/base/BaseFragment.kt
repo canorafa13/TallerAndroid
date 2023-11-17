@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
+import com.itsao.app.test.ui.viewmodels.PersonaViewModel
 
 abstract class BaseFragment<T: ViewBinding>: Fragment() {
 
@@ -18,7 +20,6 @@ abstract class BaseFragment<T: ViewBinding>: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = inflateBinding(inflater, container)
-        //binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

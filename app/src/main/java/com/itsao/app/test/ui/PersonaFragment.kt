@@ -4,27 +4,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import com.itsao.app.test.R
 import com.itsao.app.test.databinding.FragmentPersonaBinding
 import com.itsao.app.test.db.Persona
 import com.itsao.app.test.ui.base.BaseFragment
+import com.itsao.app.test.ui.base.BaseFragmentViewModel
 import com.itsao.app.test.ui.viewmodels.PersonaViewModel
 import com.itsao.app.test.utils.toast
 
-class PersonaFragment: BaseFragment<FragmentPersonaBinding>() {
-    private lateinit var viewModel: PersonaViewModel
+class PersonaFragment: BaseFragmentViewModel<FragmentPersonaBinding, PersonaViewModel>() {
     override fun inflateBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
     ) = FragmentPersonaBinding.inflate(inflater, container, false)
 
-    private fun getViewModel(): PersonaViewModel {
-        if (!::viewModel.isInitialized){
-            viewModel = PersonaViewModel()
-        }
-        return viewModel
-    }
+    override fun inflateViewModel() = PersonaViewModel()
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -48,6 +45,8 @@ class PersonaFragment: BaseFragment<FragmentPersonaBinding>() {
                 toast(R.string.message_error_form)
             }
         }
+
+
 
 
 

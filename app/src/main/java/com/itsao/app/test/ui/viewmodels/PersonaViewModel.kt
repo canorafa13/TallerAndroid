@@ -13,6 +13,8 @@ class PersonaViewModel: ViewModel() {
 
     val personaObserver = MutableLiveData<Boolean>()
 
+    val listPersonasObserver = MutableLiveData<List<Persona>>()
+
     fun createPerson(persona: Persona){
         CoroutineScope(Dispatchers.IO).launch {
             val value = db.userDao().insert(persona)
@@ -21,6 +23,13 @@ class PersonaViewModel: ViewModel() {
             } else {
                 personaObserver.postValue(false)
             }
+        }
+    }
+
+    fun getAllPersons() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val value = db.userDao().getAll()
+            listPersonasObserver.postValue(value)
         }
     }
 
