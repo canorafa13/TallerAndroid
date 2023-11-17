@@ -12,14 +12,9 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/btnMapa"
-        android:text="@string/btn_mapa"
+        android:id="@+id/btnPersona"
+        android:text="@string/btn_persona"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/btnConfirmacion"
-        android:text="@string/btn_mapa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 </LinearLayout>

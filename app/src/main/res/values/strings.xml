@@ -5,7 +5,18 @@
     <string name="btn_click_me">Click me!!</string>
 
     <string name="btn_lista">Ir a la lista</string>
-    <string name="btn_mapa">Ir al mapa</string>
+    <string name="btn_persona">Crear nueva persona</string>
 
     <string name="str_success">Proceso completado con éxito</string>
+
+    <string name="str_name">Nombre</string>
+    <string name="str_first_name">Apellido</string>
+    <string name="str_age">Edad</string>
+
+
+    <string name="btn_save">Guardar</string>
+    <string name="btn_acept">Aceptar</string>
+
+
+    <string name="message_error_form">Favor de revisar todos los campos</string>
 </resources>

@@ -15,12 +15,9 @@
             app:destination="@+id/listaFragment"/>
 
         <action
-            android:id="@+id/homeFragmentToMapaFragment"
-            app:destination="@+id/mapaFragment"/>
+            android:id="@+id/homeFragmentToPersonaFragment"
+            app:destination="@+id/personaFragment"/>
 
-        <action
-            android:id="@+id/homeFragmentToConfirmationFragment"
-            app:destination="@+id/confirmationFragment"/>
     </fragment>
     <fragment
         android:id="@+id/listaFragment"
@@ -33,10 +30,14 @@
 
     </fragment>
     <fragment
-        android:id="@+id/mapaFragment"
-        tools:layout="@layout/fragment_mapa"
-        android:name="com.itsao.app.test.ui.MapaFragment"
-        android:label="MapaFragment" />
+        android:id="@+id/personaFragment"
+        tools:layout="@layout/fragment_persona"
+        android:name="com.itsao.app.test.ui.PersonaFragment"
+        android:label="PersonaFragment" >
+        <action
+            android:id="@+id/personaFragmentToConfirmationFragment"
+            app:destination="@+id/confirmationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/confirmationFragment"
         tools:layout="@layout/fragment_confirmation"

@@ -22,12 +22,9 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>() {
             findNavController().navigate(HomeFragmentDirections.homeFragmentToListaFragment())
         }
 
-        binding.btnMapa.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.homeFragmentToMapaFragment())
+        binding.btnPersona.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.homeFragmentToPersonaFragment())
         }
 
-        binding.btnConfirmacion.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.homeFragmentToConfirmationFragment())
-        }
     }
 }
