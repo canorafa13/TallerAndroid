@@ -7,7 +7,7 @@ import com.itsao.app.test.R
 import com.itsao.app.test.databinding.ItemListaBinding
 import com.itsao.app.test.db.Persona
 
-class PersonasAdapter(private val list: List<Persona>) : RecyclerView.Adapter<PersonasAdapter.ViewHolder>() {
+class PersonasAdapter(private val list: List<Persona>, private val onSelectedItem: (Persona) -> Unit) : RecyclerView.Adapter<PersonasAdapter.ViewHolder>() {
 
     class ViewHolder(val item: ItemListaBinding) : RecyclerView.ViewHolder(item.root)
 
@@ -23,5 +23,9 @@ class PersonasAdapter(private val list: List<Persona>) : RecyclerView.Adapter<Pe
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.item.title.text = "${list[position].id} - ${list[position].name}"
         holder.item.description.text = "\t\t${list[position].firstName}, Edad: ${list[position].age} años"
+
+        holder.item.root.setOnClickListener {
+            onSelectedItem.invoke(list[position])
+        }
     }
 }

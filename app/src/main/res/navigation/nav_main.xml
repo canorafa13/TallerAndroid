@@ -28,6 +28,17 @@
             android:id="@+id/listaFragmentToConfirmationFragment"
             app:destination="@+id/confirmationFragment"/>
 
+        <action
+            app:destination="@+id/personaFragment"
+            android:id="@+id/listaFragmentToPersonaFragment" >
+            <argument
+                android:name="persona"
+                app:argType="com.itsao.app.test.db.Persona"
+                app:nullable="true" />
+        </action>
+
+
+
     </fragment>
     <fragment
         android:id="@+id/personaFragment"

@@ -50,11 +50,31 @@
     <Space
         android:layout_width="wrap_content"
         android:layout_height="50dp"/>
-    <Button
-        android:id="@+id/btnSave"
-        android:backgroundTint="@android:color/holo_green_dark"
+
+    <LinearLayout
         android:layout_gravity="center"
-        android:text="@string/btn_save"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"/>
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btnDelete"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:text="@string/btn_delete"
+            android:layout_width="0dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+
+        <Button
+            android:id="@+id/btnSave"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:text="@string/btn_save"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
 </LinearLayout>

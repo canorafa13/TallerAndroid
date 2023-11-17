@@ -3,6 +3,7 @@ package com.itsao.app.test.db
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 
 @Entity(tableName = "Persona")
@@ -19,4 +20,4 @@ data class Persona(
 
     @ColumnInfo(name = "age")
     var age: Int = 0
-)
+) : Serializable

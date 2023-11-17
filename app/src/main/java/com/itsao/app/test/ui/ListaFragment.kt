@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.itsao.app.test.databinding.FragmentListaBinding
 import com.itsao.app.test.ui.adapters.PersonasAdapter
@@ -31,7 +32,9 @@ class ListaFragment: BaseFragmentViewModel<FragmentListaBinding, PersonaViewMode
             binding.lista.apply {
                 setHasFixedSize(true)
                 layoutManager = LinearLayoutManager(context)
-                adapter = PersonasAdapter(list)
+                adapter = PersonasAdapter(list) { persona ->
+                    findNavController().navigate(ListaFragmentDirections.listaFragmentToPersonaFragment(persona))
+                }
             }
         }
 

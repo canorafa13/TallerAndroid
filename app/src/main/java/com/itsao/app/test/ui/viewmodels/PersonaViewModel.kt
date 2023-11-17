@@ -15,9 +15,16 @@ class PersonaViewModel: ViewModel() {
 
     val listPersonasObserver = MutableLiveData<List<Persona>>()
 
-    fun createPerson(persona: Persona){
+    fun createOrUpdatePerson(persona: Persona){
         CoroutineScope(Dispatchers.IO).launch {
-            val value = db.userDao().insert(persona)
+            val value = if(persona.id == 0) {
+                println("Insert....")
+                db.userDao().insert(persona)
+            } else {
+                println("Update...")
+                db.userDao().update(persona).toLong()
+            }
+
             if (value > 0){
                 personaObserver.postValue(true)
             } else {
@@ -33,4 +40,11 @@ class PersonaViewModel: ViewModel() {
         }
     }
 
+
+    fun deletePerson(id: Int){
+        CoroutineScope(Dispatchers.IO).launch {
+            db.userDao().deletePerson(id)
+            personaObserver.postValue(true)
+        }
+    }
 }
